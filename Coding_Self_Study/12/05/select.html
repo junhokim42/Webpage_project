@@ -1,0 +1,28 @@
+<form>
+    <p id="textContent"></p>
+    <p id="innerText"></p>
+    <p id="innerHTML"></p>
+    <p>
+        <label><input type="radio" name="fruits" value="apple">Apple</label>
+        <label><input type="radio" name="fruits" value="banana">Banana</label>
+        <label><input type="radio" name="fruits" value="orange">Orange</label>
+        <label><input type="radio" name="fruits" value="melon">Melon</label>
+    </p>
+
+    <select>
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="orange">Orange</option>
+        <option value="melon">Melon</option>
+    </select>
+</form>
+<script>
+    document.querySelector("#textContent").textContent
+
+    const radioEls = document.querySelectorAll("[type='radio']");
+    for(let i=0; i<radioEls.length; i++){
+        if(radioEls[i].value === 'banana'){
+            radioEls[i].checked = true;
+        }
+    }
+</script>

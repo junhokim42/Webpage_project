@@ -1,0 +1,21 @@
+<form>
+    <input type="text" onfocus="focusEvent()" onblur="blurEvent()"><br>
+    <button onclick="clickEvent()">Click</button><br>
+    
+</form>
+<script>
+    const btnEl=document.querySelector("button");
+    btnEl.onclick=() => {
+        alert("arrow click");
+    }
+
+    function clickEvent(){
+        alert("click");
+    }
+    function focusEvent(){
+        console.log("focus on");
+    }
+    function blurEvent(){
+        console.log("focus out");
+    }
+</script>

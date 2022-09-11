@@ -1,6 +1,8 @@
-this.valueA = 'a';
+valueA = 'a';
+this.valueA = 'b';
 console.log(valueA);
-valueB = 'b';
+valueB = 'c';
+this.valueB = 'd';
 console.log(this.valueB);
 
 function checkThis(){
@@ -42,3 +44,25 @@ console.log(VAT2)
 const newCalVAT = calVAT.bind(product2);
 const VAT3 = newCalVAT();
 console.log(VAT3)
+
+const counter1 = {
+    count:0,
+    addAfter1Sec(){
+        setTimeout(function(){
+            this.count += 1;
+            console.log(this.count);
+        }, 1000)
+    }
+};
+counter1.addAfter1Sec();
+
+const counter2 = {
+    count: 0,
+    addAfter1Sec(){
+        setTimeout(() =>{
+            this.count += 1;
+            console.log(this.count);
+        }, 1000)
+    }
+};
+counter2.addAfter1Sec();

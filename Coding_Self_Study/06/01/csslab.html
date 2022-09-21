@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 실습1</title>
+    <style>
+        h1{
+            background-image : linear-gradient(to right, red, orange, yellow, green, blue, navy, purple);
+            border-radius : 10px;
+            color:white;
+            text-align : center;
+            margin-left : auto;
+            margin-right : auto;
+            width : 40%;
+            height : 100px;
+            line-height : 100px;
+        }
+
+        img{
+            
+            width : 180px;
+            height : 180px;
+            margin-left : auto;
+            margin-right : auto;
+            border-radius : 30px;
+            box-shadow: 5px 5px 5px pink;
+        }
+
+        img:hover{
+            opacity : 0.3; 
+        }
+
+        table{
+            
+            margin-left : auto;
+            margin-right : auto;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1><span style="color:purple">날씨</span>의 종류</h1>
+    <hr>
+    <table>
+        <tr><td><div id="sun"><img src="./images/sun.png"></div></td><td><div id="rain"><img src="./images/rain.png"></div></td><td><div id="cloud"><img src="./images/cloud.png"></div></td></tr>  
+        <tr><td><div id="cloud_sun"><img src="./images/cloud_sun.png"></div></td><td><div id="snow"><img src="./images/snow.png"></div></td><td><div id="etc"><img src="./images/etc.png"></div></td></tr>  
+    </table>
+</body>
+</html>
+

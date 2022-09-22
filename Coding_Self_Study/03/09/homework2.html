@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang = 'ko'>
+<head>
+    <meta charset = 'UTF-8'>
+    <title>인터페이스 수행평가</title>
+    <style>
+        header{
+            background-image: linear-gradient(45deg, yellow, orange);
+            color : purple;
+            text-shadow : 5px 5px 10px black;
+            text-align : center;
+            height : 100px;
+        }
+
+        #intro{
+            color : magenta;
+        }
+
+        #book{
+            color : green;
+        }
+
+        #place{
+            color : blue;
+        }
+
+        a{
+            text-decoration: none;
+            margin : 100px;
+            text-shadow : none;
+        }
+
+        a:hover{
+            font-weight : 800; 
+        }
+
+        table{
+            border-collapse : collapse;
+            border : green
+        }
+
+        th{
+            background-color: greenyellow;
+        }
+
+        td{
+            text-indent: 2em;
+        }
+
+        section{
+            width : 700px;
+            left : 0;
+            right : 0;
+            margin-left : auto;
+            margin-right : auto;
+        }
+
+        article{
+            border : 2px solid purple;
+            border-style : dotted;
+            border-radius : 30px;
+            margin : 20px;
+            padding: 10px;
+        }
+
+        figure{
+            text-align : center;
+        }
+
+        aside{
+            text-align: center;            
+        }
+
+        footer{
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            color : white;
+            background-color: rgba(0, 0, 0, 0.783);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>HTML5 학습</h1>
+        <nav>
+            <a href = "https://www.w3.org/">W3C</a>
+            <a href = "https://www.w3schools.com/">W3CSCHOOL</a>
+            <a href = "https://www.w3schools.com/jquery/default.asp">JQuery</a>
+        </nav>
+    </header>
+
+    <section>
+        <article>
+            <h2 id = "intro">나의 소개</h2>
+            <ul>
+                <li>이름 : XXX</li>
+                <li>별명 : XXX</li>
+                <li>관심기술 : XXXX</li>
+                <li>취미 : XX</li>
+            </ul>
+        </article>
+    
+        <article>
+            <h2 id = "book">올해 재미있게 읽은 책</h2>
+            <table border="1">
+                <tr><th>제목</th><th>장르</th></tr>
+                <tr><td>슈독</td><td>나이키 창업자 필 나이트 이야기</td></tr>
+                <tr><td>가자, 어디에도 없었던 방법으로</td><td>발뮤다 창업자 테라오 겐 이야기</td></tr>
+                <tr><td>상도</td><td>조선시대 거상 임상옥 이야기</td></tr>
+                <tr><td>크래프톤 웨이</td><td>크래프톤 창업 이야기</td></tr>
+            </table>
+        </article>
+    
+        <article>
+            <h2 id = "place">자랑하고 싶은 <span style="color:purple">우리 동네</span>의 아름다운 곳</h2>
+            <p>XX산책로 : XX천과 XX산으로 이어지는 산책로에서 맑은 공기와 개울을 즐길 수 있습니다</p>
+    
+            <figure>
+                <img src="https://blog.kakaocdn.net/dn/ch5xIm/btrBx0vTUmq/Vshxd4IYb0xHknodU2wFuk/img.jpg" width="200">
+                <figcaption>구릉산</figcaption>
+            </figure>
+    
+        </article>
+    </section>
+
+    <aside>
+        <video src="Room_of_Chinese_Scholar.mp4" width="480" height="270" controls="controls"></video><br>
+    </aside>
+
+    <footer>
+        <em>이 문서는 XXX에 의해 HTML과 CSS3 기술을 사용하여 2022년 9월 20일에 작성하였습니다 (ver 1.0)</em>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "ko">
+    <head>
+        <meta charset = "UTF-8">
+        <title>JavaScript test</title>
+        <style>
+            h2{
+                color: purple;
+            }
+
+            h3{
+                color: green
+            }
+        </style>
+    </head>
+    <body>
+        <h1>9월 23일 실습</h1>
+        <hr>
+        <pre>
+        <script>
+            while(true) {
+                var num=window.prompt("1부터 9사이의 숫자 입력.");                
+                if(isNaN(num) || num == '' || num == null || 1 > num || 9 < num || num%1 !== 0){
+                    alert("1~9 사이의 정수 값만 입력해주세요");
+                } else {
+                    document.write("<h2>" + num + "단입니다." + "</h2>");
+                    for (var loop = 0; loop < 20; loop++){
+                        document.write("-"); 
+                    }
+                    for (var i=1; i<10; i++){
+                        document.write("<h3>" + num + "x" + i + "=" + (num*i) + "<br>" + "</h3>");
+                    }
+                    break; 
+                }
+            }
+        </script>
+        </pre>
+    </body>
+</html>

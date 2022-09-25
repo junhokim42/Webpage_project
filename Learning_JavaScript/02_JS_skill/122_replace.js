@@ -16,4 +16,8 @@ console.log(littleWomen.replace(/\w+ March/ig, (str, d1, d2, d3, d4, offset, s) 
 }));
 
 const name = 'March Amy'
-console.log(name.replace())
+console.log(name.replace(/(March) (Amy)/, '$2 $1'));
+console.log(name.replace(/(March) (Amy)/, (str, first, second, offset, s) => {
+    console.log(`${second} is name, ${first} is first name`);
+    return `${second} ${first}`
+}));

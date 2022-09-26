@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        button:nth-of-type(1) {
+            color : red;
+            font-size : 1.5em;
+        }
+
+        button:nth-of-type(2) {
+            color : blue;
+            font-size : 1.5em;
+        }
+        button:nth-of-type(3) {
+            color : green;
+            font-size : 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="updateColor('red')">빨강색</button>
+    <button onclick="updateColor('blue')">파랑색</button>
+    <button onclick="updateColor('green')">녹&nbsp;&nbsp;색</button>
+    <hr>
+    <h2 id = "today_">버튼을 클릭하세요</h2>
+    
+    <script>
+        
+        var outDom = document.getElementById("today_");
+
+        function updateColor(c){
+
+            var today = new Date()
+            var year = today.getFullYear();
+            var month = today.getMonth()+1;
+            var date = today.getDate();
+
+            outDom.style.color = c;
+            document.getElementById("today_").innerHTML='오늘은 ' + year + "년 " + month + "월 " + date + "일입니다";
+        }
+
+    </script>
+</body>
+</html>
+

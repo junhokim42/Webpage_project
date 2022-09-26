@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exercise2</title>
+</head>
+<body>
+<script>
+    var my_birthday = new Date(1994, 12, 23);
+
+    function getBirthdayDay(){
+        var week = new Array('일','월','화','수','목','금','토');
+        var my_birthday = new Date(1994, 11, 23).getDay();
+        var day = week[my_birthday];
+        return day;
+    };
+        
+    document.write("<h2> Junho는 " + getBirthdayDay().fontcolor("blue") + "요일에 태어났습니다 </h2>");
+
+</script>
+</body>
+</html>

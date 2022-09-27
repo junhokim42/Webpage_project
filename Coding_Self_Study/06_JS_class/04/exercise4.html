@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercise4</title>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>이벤트 처리 실습</h1>
+        <hr>
+
+        <button onclick="updateImage(0);">맑음</button>
+        <button onclick="updateImage(1);">흐림</button>
+        <button onclick="updateImage(2);">비</button>
+        <hr>
+
+        <img id="weather" src="" width="200">
+
+        <script>
+
+            function updateImage(e) {
+                var dom = document.getElementById("weather");
+                var imageName = ['sun', 'cloud', 'rain']
+                console.log(imageName[2])
+                
+                dom.src = imageName[e]+".png";
+            }
+
+        </script>
+    </body>
+</html>

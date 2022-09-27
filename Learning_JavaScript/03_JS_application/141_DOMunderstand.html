@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>DOM understand</title>
+    </head>
+    <body>
+        <div id = "div1">hello DOM</div>
+        <ul>
+            <li>list item1</li>
+            <li>list item2</li>
+        </ul>
+        <script>
+            const divEl = document.getElementById('div1');
+            console.log(divEl.innerHTML);
+
+            console.log(divEl.nodeType);
+            console.log(divEl.nodeTYpe === Node.ELEMENT_NODE);
+
+            console.log(divEl.constructor);
+            
+        </script>
+    </body>
+</html>

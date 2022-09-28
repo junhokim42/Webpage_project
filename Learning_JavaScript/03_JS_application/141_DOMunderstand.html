@@ -18,7 +18,19 @@
             console.log(divEl.nodeTYpe === Node.ELEMENT_NODE);
 
             console.log(divEl.constructor);
+            console.log(divEl instanceof HTMLDivElement);
+            console.log(divEl instanceof HTMLElement);
+            console.log(divEl instanceof Element);
+            console.log(divEl instanceof Node);
+            console.log(Element.prototype);
+            console.log(divEl.tagName);
+
+            const divEl2 = document.querySelectorAll('#div1');
+            console.log(div1El2.innerHTML);
             
+            const liEls = document.querySelectorAll('ul li');
+            console.log(liEls.item(0).innerHTML);
+            console.log(liEls.item(1).textContent);
         </script>
     </body>
 </html>

@@ -3,17 +3,52 @@
     <head>
         <meta charset = "UTF-8">
         <title>DOM navigation example</title>
-        <link rel = 'stylesheet' href="'css/dom-navigation.css">
+        <link rel = 'stylesheet' href="./142_dom-navigation.css">
     </head>
     <body>
-        <h1>국내여행지</h1>
-        <ul>
-            <li>서울</li>
-            <li>제주</li>
-            <li>속초</li>
-            <li>부산</li>
+        <h1>여행지 목록</h1>
+        <ul id = "myUL">
+            <li><span class = 'caret'>국내여행지</span>
+                <ul class="nested">
+                    <li><span class = 'caret'>서울</span>
+                        <ol class="nested">
+                            <li>광화문</li>
+                            <li>여의도</li>
+                            <li>동대문</li>
+                        </ol>
+                    </li>
+                    <li>제주</li>
+                    <li>속초</li>
+                    <li>부산</li>
+                </ul>
+            </li>
+            <li><span class = 'caret'>해외여행지</span>
+                <ul class="nested">
+                    <li><span class = 'caret'>베이징</span>
+                        <ol class="nested">
+                            <li>이화원</li>
+                            <li>싼리툰</li>
+                            <li>원명원</li>
+                        </ol>
+                    </li>
+                    <li>도쿄</li>
+                    <li>샌프란시스코</li>
+                    <li>파리</li>
+                </ul>
+            </li>
         </ul>
+
         <script>
+            var toggler = document.getElementsByClassName("caret");
+            var i;
+
+            for (i = 0; i < toggler.length; i++) {
+                toggler[i].addEventListener("click", function() {
+                    this.parentElement.querySelector(".nested").classList.toggle("active");
+                    this.classList.toggle("caret-down");
+                });
+            }
+
             const bodyEl = document.body;
             const bodyElChildren = bodyEl.children;
             console.log(bodyElChildren);

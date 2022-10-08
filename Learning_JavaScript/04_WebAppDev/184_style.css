@@ -4,6 +4,7 @@ img{
 
 p{
     font-size: large;
+    font-family:'Franklin Gothic Medium';
 }
 
 div{
@@ -15,44 +16,39 @@ div{
 .slider{
     height: 300px;
     width: auto;
-    border: 2px solid red;
+    background-color: #AAA;
+    border-radius: 20px;
     text-align: center;
+    overflow: hidden;  
 }
-
-.item-wrapper{
-    overflow: hidden;
-}
-
-.slider-btn-wrapper{
-    overflow: hidden;   
-}
-
-
 
 .item{
     display: flex;
     float: left;
-    background-color: #CCC;
+    background-color: #DDD;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
-
 }
+
+.slider-btn-wrapper{
+    overflow: hidden;
+}
+
+/* .item-wrapper{
+    overflow: hidden;
+} */
 
 .slider-btn{
     width: 42px;
     height: 42px;
-    border: 2px solid black;
-    border-radius: 50%;
-    outline: none;
+    border-radius: 20%;
+    
     color: black;
     cursor: pointer;
     display: flex;
-    /* justify-content: center;
+    justify-content: center;
     align-items: center;
 
-    position: absolute;
-
-    margin: auto; */
 }
 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = 'utf-8'>
+        <title>SOS단</title>
+        <link rel = "icon" type = "image/x-icon" href = 'https://w.namu.la/s/86e2a5a484ee669787b10ea9a15937dcc3625fad85f281fc6bd20e16677be9d631144a14635dc2db475ed1c2e19dcf41dd7eb279cf611ae82646371c40bf67c7d015c3a634a334a5a61ffce46efccdb5410b4825bec52f811127241ca2d252fc587f96fb3dcc6d7edffdd3bab515edf4'>
+        <link rel = "stylesheet" href = "184_SOSdan.css">
+    </head>
+    <body>
+        <h1 style="text-align:center;">SOS단</h1>
+        <img style = 'width: 10rem; height: 10rem; float: right; display: flex;' src = 'https://w.namu.la/s/86e2a5a484ee669787b10ea9a15937dcc3625fad85f281fc6bd20e16677be9d631144a14635dc2db475ed1c2e19dcf41dd7eb279cf611ae82646371c40bf67c7d015c3a634a334a5a61ffce46efccdb5410b4825bec52f811127241ca2d252fc587f96fb3dcc6d7edffdd3bab515edf4'>
+        <hr>
+        <div class="slider">
+            <div class="slide">
+                <img src = 'https://w.namu.la/s/adb8e08eb95da19e55a867a6b3f709ab2eb16e97d187b2fca4819c055db236457d28edd0bdbc61aa246339e63cd84c7587080e7ca4292a41fbb6456d70fc12dd5d1d9f769330e8a85df6e54b285fe570432876467479c26d7e5cc137d32c5fd0' alt="">
+            </div>
+    
+            <div class="slide">
+                <img src="https://w.namu.la/s/f5d5d2b4d793bf6efbc03e37ca9e81f5b2062096e0575bfb3472ecb10c407c77782222f21ea329c93ae3e36ad1f6fb778757d5335dee49ddf383e3f9d8a04371981fe150fc8de9115a7a95f99059d355aad4a69ffcc036cca86d678c5ba16212" alt="">
+            </div>
+    
+            <div class="slide">
+                <img src="https://w.namu.la/s/b13760aca2cf7d45e8e3392ef9d49c20bd9c723515b9d8d0051573d87b5aa582b67bd475d6baeb0a987a0961b485bac22e93a19de44cbdab52489ce1c901efe2d9edf247eca20d18ae9b526c49aa9dc1cc66e67bf21d04f56d7bb1cac6ac5d22" alt="">
+            </div>
+    
+            <div class="slide">
+                <img src="https://w.namu.la/s/9bf7af635c76ae66f51afd03abfc28ae121e16c3f3033f69a307f5c4be5283166e3647d86dfce6a63a4bb236553275627690d0d7680c4abad5e50fa0de62c2a010510b628baedb909b72146b91302a6292f87c4f7cdf475f7e45d8880dcba79b" alt="">
+            </div>
+
+            <div class="slide">
+                <img src="https://w.namu.la/s/07194639193823dd62a62e1e5db075b44b6dbd6bf1ad71569b19525a456a83a5abf4eb6e1dc36c37c48a4c42399350c3177d2e19e477176368cf3cf5b5c742b3afe1b6b71d1c095acdf26c77fe3906924d62f6c994ad0213e5fb039b42fe7cb8" alt="">
+            </div>
+    
+            <button class="slider__btn slider__btn--left">&#10094;</button>
+            <button class="slider__btn slider__btn--right">&#10095;</button>
+            
+            <div class="dots"></div>
+        </div>  
+        <hr>
+        <script>
+            const slideContainer = document.querySelectorAll('.slider');
+
+            for(let i = 0; i < slideContainer.length; i++){
+
+                const slider = function () {
+                    // const this_slider = this;
+                    const slides = slideContainer[i].querySelectorAll('.slide');
+                    const btnLeft = slideContainer[i].querySelector('.slider__btn--left');
+                    const btnRight = slideContainer[i].querySelector('.slider__btn--right');
+                    const dotContainer = slideContainer[i].querySelector('.dots');
+                
+                    let curSlide = 0;
+                    const maxSlide = slides.length;
+                
+                    // Functions
+                    const createDots = function () {
+                            slides.forEach(function (_, i) {
+                            dotContainer.insertAdjacentHTML(
+                            'beforeend',
+                            `<button class="dots__dot" data-slide="${i}"></button>`
+                            );
+                        });
+                    };
+                
+                    const activateDot = function (slide) {
+                        slideContainer[i]
+                            .querySelectorAll('.dots__dot')
+                            .forEach(dot => dot.classList.remove('dots__dot--active'));
+                    
+                        slideContainer[i]
+                            .querySelector(`.dots__dot[data-slide="${slide}"]`)
+                            .classList.add('dots__dot--active');
+                    };
+                
+                    const goToSlide = function (slide) {
+                        slides.forEach(
+                            (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+                        );
+                    };
+                
+                    // Next slide
+                    const nextSlide = function () {
+                        if (curSlide === maxSlide - 1) {
+                            curSlide = 0;
+                        } else {
+                            curSlide++;
+                        }
+                    
+                        goToSlide(curSlide);
+                        activateDot(curSlide);
+                    };
+                
+                    const prevSlide = function () {
+                        if (curSlide === 0) {
+                            curSlide = maxSlide - 1;
+                        } else {
+                            curSlide--;
+                        }
+                        goToSlide(curSlide);
+                        activateDot(curSlide);
+                    };
+                
+                    const init = function () {
+                        goToSlide(0);
+                        createDots();
+                    
+                        activateDot(0);
+                    };
+                    init();
+                
+                    // Event handlers
+                    btnRight.addEventListener('click', nextSlide);
+                    btnLeft.addEventListener('click', prevSlide);
+                
+                    document.addEventListener('keydown', function (e) {
+                        if (e.key === 'ArrowLeft') prevSlide();
+                        e.key === 'ArrowRight' && nextSlide();
+                    });
+                
+                    dotContainer.addEventListener('click', function (e) {
+                        if (e.target.classList.contains('dots__dot')) {
+                            const { slide } = e.target.dataset;
+                            goToSlide(slide);
+                            activateDot(slide);
+                        }
+                    });
+                };
+                slider();
+            }
+        </script>
+    </body>
+</html>

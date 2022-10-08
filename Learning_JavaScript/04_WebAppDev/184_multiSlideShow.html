@@ -18,6 +18,7 @@
                     <img src = 'https://w.namu.la/s/adb8e08eb95da19e55a867a6b3f709ab2eb16e97d187b2fca4819c055db236457d28edd0bdbc61aa246339e63cd84c7587080e7ca4292a41fbb6456d70fc12dd5d1d9f769330e8a85df6e54b285fe570432876467479c26d7e5cc137d32c5fd0'>
                     <div class = 'title'>
                         <h2>스즈미야 하루히</h2>
+                        <p>말괄량이 여고생</p>
                         <p>신</p>
                     </div>
                 </div>
@@ -26,12 +27,14 @@
                     <div class = 'title'>
                         <h2>쿈</h2>
                         <p>극중 화자</p>
+                        <p>평범한 인간</p>
                     </div>
                 </div>
                 <div class = 'item'>
                     <img src = 'https://w.namu.la/s/b13760aca2cf7d45e8e3392ef9d49c20bd9c723515b9d8d0051573d87b5aa582b67bd475d6baeb0a987a0961b485bac22e93a19de44cbdab52489ce1c901efe2d9edf247eca20d18ae9b526c49aa9dc1cc66e67bf21d04f56d7bb1cac6ac5d22'>
                     <div class = 'title'>
                         <h2>나가토 유키</h2>
+                        <p>조용한 문학소녀</p>
                         <p>우주인</p>
                     </div>
                 </div>
@@ -39,6 +42,7 @@
                     <img src = 'https://w.namu.la/s/9bf7af635c76ae66f51afd03abfc28ae121e16c3f3033f69a307f5c4be5283166e3647d86dfce6a63a4bb236553275627690d0d7680c4abad5e50fa0de62c2a010510b628baedb909b72146b91302a6292f87c4f7cdf475f7e45d8880dcba79b'>
                     <div class = 'title'>
                         <h2>아사히나 미쿠루</h2>
+                        <p>소심쟁이 미소녀</p>
                         <p>미래인</p>
                     </div>
                 </div>
@@ -46,6 +50,7 @@
                     <img src = 'https://w.namu.la/s/07194639193823dd62a62e1e5db075b44b6dbd6bf1ad71569b19525a456a83a5abf4eb6e1dc36c37c48a4c42399350c3177d2e19e477176368cf3cf5b5c742b3afe1b6b71d1c095acdf26c77fe3906924d62f6c994ad0213e5fb039b42fe7cb8'>
                     <div class = 'title'>
                         <h2>코이즈미 이츠키</h2>
+                        <p>의문의 전학생</p>
                         <p>초능력자</p>
                     </div>
                 </div>
@@ -60,23 +65,23 @@
                     leftBtnEl = document.getElementById('left-btn'),
                     rightBtnEl = document.getElementById('right-btn');
                 
-                    function moveSlides(direction){
-                        const item = itemWrapperEl.querySelector('.item'),
-                            itemMargin = parseFloat(getComputedStyle(item).marginRight);
-                            itemWidth = itemMargin + item.offsetWidth +2;
+                function moveSlides(direction){
+                    const item = itemWrapperEl.querySelector('.item'),
+                        itemMargin = parseFloat(getComputedStyle(item).marginRight);
+                        itemWidth = itemMargin + item.offsetWidth + 2;
 
-                        let itemCount = Math.floor(itemWrapperEl.scrollLeft / itemWidth);
+                    let itemCount = Math.round(itemWrapperEl.scrollLeft / itemWidth);
 
-                        if (direction === 'left'){
-                            itemCount = itemCount -1;
-                        }else{
-                            itemCount = itemCount + 1;
-                        }
-                        itemWrapperEl.scrollLeft = itemWidth * itemCount;
+                    if (direction === 'left'){
+                        itemCount = itemCount - 1;
+                    }else{
+                        itemCount = itemCount + 1;
                     }
+                    itemWrapperEl.scrollLeft = itemWidth * itemCount;
+                }
 
-                    leftBtnEl.addEventListener('click', e => moveSlides('left'));
-                    rightBtnEl.addEventListener('click', e => moveSlides('right'));
+                leftBtnEl.addEventListener('click', e => moveSlides('left'));
+                rightBtnEl.addEventListener('click', e => moveSlides('right'));
             })();
         </script>
     </body>

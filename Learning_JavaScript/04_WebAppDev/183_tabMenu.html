@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SOS단 멤버 설명</title>
+        <link rel = 'stylesheet' href = '183_style.css'>
+    </head>
+    <body>
+        <h1>SOS단 멤버 설명</h1>
+        <div class = 'tabs'>
+            <ul>
+                <li><a href = #Suzumiya>스즈미야 하루히</a></li>
+                <li><a href = #Kyon>쿈</a></li>
+                <li><a href = #Nagato>나가토 유키</a></li>
+                <li><a href = #Asahina>아사히나 미쿠루</a></li>
+                <li><a href = #Koizumi>코이즈미 이츠키</a></li>
+            </ul>
+            <div class = 'tab_content'>
+                <div id = 'Suzumiya'>
+                    <h3>스즈미야 하루히</h3>
+                    <p>세계를 창조한 창조신이자 현인신이다. '자신이 원하는 것을 실현시킨다.'는 터무니없는 현실 조작 능력을 가지고 있다. 하루히가 바라던 대로 우주인=<a href = #Nagato>나가토</a>, 초능력자=<a href = #Koizumi>코이즈미</a>, 미래인=<a href = #Asahina>미쿠루</a>가 모이게 된다.</p>
+                </div>
+                <div id = 'Kyon'>
+                    <h3>쿈</h3>
+                    <p>작중 화자로서 별별 신기한 경험은 다 하고 다니는 인물로 <a href = #Suzumiya>하루히</a>에게 있는 대로 휘둘린다. SOS단에 유일하게 '별 볼 일 없는 인간'으로 보이기 쉽지만 사실상 '<a href = #Suzumiya>스즈미야 하루히</a>에게 가장 큰 영향을 미치고 있는 인물'이다.</p>
+                </div>
+                <div id = 'Nagato'>
+                    <h3>나가토 유키</h3>
+                    <p>말수 적은 문학소녀 캐릭터로 정체는 정보통합사념체에 의해 만들어진 대유기생명체콘택트용휴머노이드인터페이스이다. <a href = #Suzumiya>스즈미야 하루히</a>에게 있는 자율진화의 단서를 관찰하라는 명령을 받고 파견되었다.</p>
+                </div>
+                <div id = 'Asahina'>
+                    <h3>아사히나 미쿠루</h3>
+                    <p><a href = #Suzumiya>스즈미야 하루히</a>가 SOS단을 설립하기로 결심하고, 마스코트 캐릭터로 서예부에서 데려온 인물이다. 정체는 미래에서 <a href = #Suzumiya>스즈미야 하루히</a>의 감시역으로 보내진 미래인이다.</p>
+                </div>
+                <div id = 'Koizumi'>
+                    <h3>코이즈미 이츠키</h3>
+                    <p> SOS단 부단장. <a href = #Suzumiya>스즈미야 하루히</a>에게 "수수께끼의 전학생"으로 끌려오게 된다. 정체는 폐쇄공간에 침입하고 그 안에서 신인을 파괴하는 능력을 지닌 일종의 초능력자이다.</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            function createTabs(selector){
+                const el = document.querySelector(selector);
+                const liEls = el.querySelectorAll('ul li');
+                const tabContentEl = el.querySelector('.tab_content');
+                const firstTabEl = liEls.item(0).firstElementChild
+
+
+                function activate(target){
+                    const hash = target.hash;
+                    const anchors = target.closest('ul').querySelectorAll('li a');
+                        Array.from(anchors)
+                            .forEash(v => v.className = '');
+                        Array.from(tabContentEl.children)
+                            .forEach(v => v.style.display = 'none');
+                        tabContentEl.querySelector(hash).style.display = '';
+                        target.className = 'active';
+                }
+
+                const handleHash = () => {
+                    console.log(location.hash)
+                    if (location.hash){
+                        const selector = `a[href="${location.hash}"]`;
+                        activate(document.querySelector(selector));
+                    }else{
+                        activate(firstTabEl);
+                    }
+                }
+
+                window.addEventListener('hashchange', handleHash);
+                handleHash();
+            }
+
+            createTabs('.tabs');
+        </script>
+    </body>
+</html>

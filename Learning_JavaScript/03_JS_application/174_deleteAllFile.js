@@ -32,4 +32,8 @@ try{
     const files = fs.readdirSync(p);
     if (files.length)
         files.forEach(f => removePath(path.join(p, f), printResult));
+}catch(err){
+    if (err) return console.log(err);
 }
+
+removePath(p, printResult);

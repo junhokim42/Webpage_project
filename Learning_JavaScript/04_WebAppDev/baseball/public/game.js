@@ -38,5 +38,37 @@ class BaseballGame{
         });
     }
 
-    
+    async askResult(guess){
+        const headers = new Headers({
+            'Content-Type': 'application/json'
+        });
+        const res = await fetch(`api/game/${this.id}/guess`, {
+            method: 'POST',
+            body: JSON.stringify({guess}),
+            headers
+        });
+
+        if (res.status === 400){
+            const {message} = await res.json()
+            alert(message);
+            throw new Error(message);
+        }else{
+            return res.json();
+        }
+    }
+
+    rednerResults(guess, result){
+        this.resultContainerEl.insertAdjacentHTML(
+            'beforeend',
+            `<li class = "list-group-item">
+            <span class ="guess">${guess}</span>
+            <span class = "badge result">${result}</span></li>`
+        );
+    }
+
+    makeEnd(){
+        this.guessEl.disabled = true;
+        this.guessEl.placeholder = "정답을 맞추었습니다."
+    }
+
 }

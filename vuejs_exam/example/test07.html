@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- Vue 객체를 마운트할 대상 엘리먼트 -->
+    <div id="app">
+        <input type="text" v-model="msg">
+        <div>{{msg}}</div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello Vue~!'
+            }
+        });
+    </script>
+</body>
+</html>
+

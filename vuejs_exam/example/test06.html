@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- Vue 객체를 마운트할 대상 엘리먼트 -->
+    <div id="app">
+        <div>{{message + ' Vue~'}}</div>
+        <div>{{num > 10 ? num * num : num + 100}}</div>
+        <div>{{message.split("").reverse().join("")}}</div>
+        <div v-text="message + ' Vue~'"></div>
+        <div v-text="num > 10 ? num * num : num + 100"></div>
+        <div v-text="message.split('').reverse().join('')"></div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                num: 5,
+                message: 'Hello'
+            }
+        });
+    </script>
+</body>
+</html>
+

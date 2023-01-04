@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- Vue 객체를 마운트할 대상 엘리먼트 -->
+    <div id="app">
+        <!-- Vue 객체의 data 속성의 값을 참조 -->
+        <div>{{message}}</div>
+        <div v-once>{{message}}</div>
+    </div>
+    <script>
+        /*
+        Vue 객체 생성
+        el : 뷰객체를 마운트할 엘리먼트 설정(선택자 활용)
+        data : 내부적으로 관리할 데이터 지정
+        */
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue~!'
+            }
+        });
+    </script>
+</body>
+</html>
+

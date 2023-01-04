@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>data : {{message}}</div>
+      <div>method kor : {{helloKor()}}</div>
+      <div>method eng : {{helloEng()}}</div>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello 싸피',
+          name: '안효인',
+        },
+        methods: {
+          helloEng() {
+            return 'Hello ' + this.name;
+          },
+          helloKor() {
+            return '안녕 ' + this.name;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
